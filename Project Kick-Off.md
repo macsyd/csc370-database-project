@@ -6,20 +6,20 @@
 ## Database system:
 
 ### Requirements:
-- CRUD: Create a route, read the list of all routes, update a route, delete a route
-- User must be able to request the creation of a route
-- Admin must be able to review and approve requests (or modify before approval such as filling in missing information)
-- Option to add expiry date to a route
+- CRUD: **Create** a route, **read** the list of all routes, **update** a route, **delete** a route
+- User must be able to request the **creation** of a route
+- **Admin** must be able to review and approve requests (or modify before approval such as filling in missing information)
+- Option to add **expiry date** to a route
 
 ### Data needed:
-- Destination: The IP address of the internal service or network that you want to access through the VPN connection.
+- **Destination:** The IP address of the internal service or network that you want to access through the VPN connection.
     - Examples: Web server, file server, database, or a network that all employee PCs and printers are connected to (adding an entire network saves time adding individual IP addresses and might be desired when the IP address could change within that network’s range of IP addresses)
 Subnet/Network Mask
-- Gateway: Usually the IP address of the router.
-- Current route age and expiration date: An indication of how much time is left before the route is automatically deleted if an expiration date was assigned (helps with technical debt)
-- Owner: The contact person who is responsible for that device/service (maintainer or just the primary user of it)
-- Name/Description: What the route is for. Something all employees can comprehend without a technical background.
-- Admin: which users have admin privileges and what can they access
+- **Gateway:** Usually the IP address of the router.
+- Current **route age** and expiration date: An indication of how much time is left before the route is automatically deleted if an expiration date was assigned (helps with technical debt)
+- **Owner:** The contact person who is responsible for that device/service (maintainer or just the primary user of it)
+- **Name/Description:** What the route is for. Something all employees can comprehend without a technical background.
+- **Admin:** which users have admin privileges and what can they access
 
 ## Goals for next sprint (covering up to and including Basic Conceptual Design):
 - Have a conceptual design of our database, illustrated by an ERD
