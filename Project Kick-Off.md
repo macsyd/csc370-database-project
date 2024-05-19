@@ -1,16 +1,17 @@
-# Goals for this sprint:
+# Project Kick-Off
+## Goals for this sprint:
 Develop a study plan for the course - do this by deciding on our project idea (what we want to build)
 Demonstrate that we can define application and business requirements - do this by creating a list of requirements
 
-### Database system:
+## Database system:
 
-## Requirements:
+### Requirements:
 CRUD: Create a route, read the list of all routes, update a route, delete a route
 User must be able to request the creation of a route
 Admin must be able to review and approve requests (or modify before approval such as filling in missing information)
 Option to add expiry date to a route
 
-## Data needed:
+### Data needed:
 Destination: The IP address of the internal service or network that you want to access through the VPN connection.
 Examples: Web server, file server, database, or a network that all employee PCs and printers are connected to (adding an entire network saves time adding individual IP addresses and might be desired when the IP address could change within that network’s range of IP addresses)
 Subnet/Network Mask
