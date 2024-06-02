@@ -25,9 +25,7 @@ CREATE TABLE Requests (
     Status ENUM('APPROVED', 'DENIED', 'PENDING'),
     RouteDescription TEXT,
     ReviewedBy INT,
-    CreatedBy INT,
-    FOREIGN KEY (ReviewedBy) REFERENCES Admin(AdminID),
-    FOREIGN KEY (CreatedBy) REFERENCES Employee(EmployeeID)
+    CreatedBy INT
 );
 
 -- Create Routes table
@@ -40,8 +38,7 @@ CREATE TABLE Routes (
     ExpiryDate TIMESTAMP,
     Owner INT,
     Name VARCHAR(100),
-    Description TEXT,
-    FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
+    Description TEXT
 );
 INSERT INTO Employee (EmployeeName) VALUES
 ('John Doe');
