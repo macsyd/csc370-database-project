@@ -16,4 +16,29 @@ We have created a [script](https://github.com/macsyd/csc370-database-project/blo
 ![image](https://github.com/macsyd/csc370-database-project/assets/91709747/7520c126-66f2-466f-b74d-51afed35e102)
 
 ## Goals for next sprint (up to complex SQL queries):
-* 
+### Plan to meet module-level competencies:
+**Competency:** *“Determines keys: Determines an appropriate set of FD's for a relation and determines keys”* 
+**Plan:**
++ Determine functional dependencies and keys (including keys and superkeys)
+
+**Competency** *“BCNF-normalises relations: Prevents data anomalies by decomposing simple relations into BCNF”*
+**Plan:**
++ Investigate whether our database is in BCNF by checking for BCNF violations and making changes as needed
+
+**Competency** *“Enforces referential integrity: Adds foreign keys with specific referential integrity constraints and policies”*
+**Plan:**
++ Add foreign key constraints to our database
++ Attempt to create data anomalies and observe how well our database prevents them from occurring (success criteria is 100% of attempted data anomalies rejected)
+
+**Competency** *“Uses aggregation: Creates an aggregation query with FD attributes and both WHERE and HAVING”*
+**Plan:**
++ Write aggregation queries using WHERE and HAVING
++ Write queries using GROUP BY
+
+**Competency** *“Uses sub-queries: Creates a sub-query to aggregate aggregations with existential condition”*
+**Plan:**
++ Write subqueries
+
+### Plan to meet course-level competencies:
+**Competency:**
+**Plan:**
