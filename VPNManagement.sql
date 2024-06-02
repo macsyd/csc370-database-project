@@ -9,18 +9,18 @@ USE VPNManagement;
 
 -- Create Users table
 CREATE TABLE Employee (
-    EmployeeID INT AUTO_INCREMENT,
+    EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
     EmployeeName VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE Admin (
-    AdminID INT AUTO_INCREMENT,
+    AdminID INT AUTO_INCREMENT PRIMARY KEY,
     AdminName VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE Requests (
     Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    RequestID INT AUTO_INCREMENT,
+    RequestID INT AUTO_INCREMENT PRIMARY KEY,
     RouteName VARCHAR(100),
     Status ENUM('APPROVED', 'DENIED', 'PENDING'),
     RouteDescription TEXT,
@@ -30,7 +30,7 @@ CREATE TABLE Requests (
 
 -- Create Routes table
 CREATE TABLE Routes (
-    RouteID INT AUTO_INCREMENT,
+    RouteID INT AUTO_INCREMENT PRIMARY KEY,
     Destination VARCHAR(100) UNIQUE,
     SubnetMask VARCHAR(100),
     Gateway VARCHAR(100),
