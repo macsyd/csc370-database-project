@@ -43,6 +43,7 @@ We have created a [script](https://github.com/macsyd/csc370-database-project/blo
 **Data Analytics Competency:** *“Writes SQL code to generate desired effects on a relational database”* <br>
 + In the process of writing SQL queries to extract specific data from our database, we have showcased the ability to anticipate the result of queries executed against the relation instances (see DemoQueries.sql)
 + We have demonstrated the ability write SQL queries to combine data from tables using JOIN operations (see DemoQueries.sql)
-**Data modeling Competency:** *“Stores data in a set of tables that are compatible with data sources”* <br>
+
+**Data Modeling Competency:** *“Stores data in a set of tables that are compatible with data sources”* <br>
 + As we set up the beginnings of our SQL database, we demonstrated the ability to select appropriate data types for tables (see VPNManagement.sql)
 + Through developing our ERD following the guidelines discussed in lecture, we have showcased the ability to document relationships between tables in a way that is syntactically and semantically correct (see above)
