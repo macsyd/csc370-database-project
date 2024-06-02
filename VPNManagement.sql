@@ -9,30 +9,28 @@ USE VPNManagement;
 
 -- Create Users table
 CREATE TABLE Employee (
-    EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
+    EmployeeID INT AUTO_INCREMENT,
     EmployeeName VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE Admin (
-    AdminID INT AUTO_INCREMENT PRIMARY KEY,
+    AdminID INT AUTO_INCREMENT,
     AdminName VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE Requests (
     Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    RequestID INT AUTO_INCREMENT PRIMARY KEY,
+    RequestID INT AUTO_INCREMENT,
     RouteName VARCHAR(100),
     Status ENUM('APPROVED', 'DENIED', 'PENDING'),
     RouteDescription TEXT,
     ReviewedBy INT,
-    CreatedBy INT,
-    FOREIGN KEY (ReviewedBy) REFERENCES Admin(AdminID),
-    FOREIGN KEY (CreatedBy) REFERENCES Employee(EmployeeID)
+    CreatedBy INT
 );
 
 -- Create Routes table
 CREATE TABLE Routes (
-    RouteID INT AUTO_INCREMENT PRIMARY KEY,
+    RouteID INT AUTO_INCREMENT,
     Destination VARCHAR(100) UNIQUE,
     SubnetMask VARCHAR(100),
     Gateway VARCHAR(100),
@@ -40,8 +38,7 @@ CREATE TABLE Routes (
     ExpiryDate TIMESTAMP,
     Owner INT,
     Name VARCHAR(100),
-    Description TEXT,
-    FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
+    Description TEXT
 );
 INSERT INTO Employee (EmployeeName) VALUES
 ('John Doe');
