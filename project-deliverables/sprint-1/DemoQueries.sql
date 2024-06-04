@@ -11,7 +11,7 @@ SELECT DISTINCT(`AdminName`)
 FROM `Admin`
 JOIN `Requests`
     ON(`Requests`.`ApprovedBy` = `Admin`.`AdminID`)
-WHERE `Requests`.`Status` = 'DENIED';
+WHERE `Requests`.`Status` = 'REJECTED';
 
 
 -- Find names of all employees who own more than 2 routes and how many routes they own
