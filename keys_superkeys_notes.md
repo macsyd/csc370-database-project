@@ -1,3 +1,24 @@
+*Functional dependencies:*
+
+**Table: Employees**
++ EmployeeID → EmployeeName
++ EmployeeName → EmployeeID
+
+**Table: Admin**
++ AdminID → AdminName
++ AdminName → AdminID
+
+**Table: Requests**
++ RequestID → RouteName, RouteDescription, CreationDate, Status, CreatedBy, ReviewBy
++ Note that we can also include any other attributes with RequestID, and that subset will itself be a superkey, therefore, functionally determining all other attributes
+
+**Table: Routes**
++ RouteID → Destination, Gateway, SubnetMask, CreationDate, ExpiryDate, Owner, Name, Description
++ Destination → RouteID, Gateway, SubnetMask, CreationDate, ExpiryDate, Owner, Name, Description
++ Note once again that we can also include any other attributes with RouteID or Destination, and that subset will itself be a superkey, therefore, functionally determining all other attributes
+
+*Keys and superkeys:*
+
 + We have declared \`EmployeeID\` as the `PRIMARY KEY` for the \`Employee\` table because it is a key for the relation; it functionally determines all other attributes in the relation
 + Since we have enforced uniqueness on the \`EmployeeName\` attribute, it is also a key for the relation, so in theory we could have alternatively declared it as the `PRIMARY KEY`
 + The superkeys for this relation are {\`EmployeeID\`}, {\`EmployeeID\`,  \`EmployeeName\`}, and {\`EmployeeName\`}
