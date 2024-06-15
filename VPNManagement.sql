@@ -37,7 +37,7 @@ CREATE TABLE Routes (
     SubnetMask VARCHAR(100),
     Gateway VARCHAR(100),
     CreationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ExpiryDate TIMESTAMP,
+    ExpiryDate TIMESTAMP DEFAULT NULL,
     Owner INT,
     Name VARCHAR(100),
     Description TEXT,
