@@ -1,3 +1,5 @@
+-- Run this to test our referential integrity contraints only after loading the sample data
+
 -- INSERTION ANOMALIES
 
 -- Attempt to insert a tuple into Requests table that was created by an EmployeeID that doesn't exist in the Employee table:
