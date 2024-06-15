@@ -43,8 +43,9 @@ CREATE TABLE Routes (
     Description TEXT,
     FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
 );
-INSERT INTO Employee (EmployeeName) VALUES
-('John Doe');
+
+-- INSERT INTO Employee (EmployeeName) VALUES
+-- ('John Doe');
 
 -- Insert data into Admin table
 -- INSERT INTO Admin (AdminName) VALUES
