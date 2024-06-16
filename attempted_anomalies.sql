@@ -50,7 +50,6 @@ UPDATE `Admin`
 SET `AdminID` = 9999
 WHERE `AdminID` = 1;
 
-
 -- Attempt to update a tuple in Employee table to change an EmployeeID that was being used for the Owner of at least once tuple in Routes:
 UPDATE `Employee`
 SET `EmployeeID` = 9999
