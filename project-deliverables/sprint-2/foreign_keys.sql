@@ -1,0 +1,8 @@
+ALTER TABLE Requests
+ADD FOREIGN KEY (ReviewedBy) REFERENCES Admin(AdminID);
+
+ALTER TABLE Requests
+ADD FOREIGN KEY (CreatedBy) REFERENCES Employee(EmployeeID);
+
+ALTER TABLE Routes
+ADD FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID);
