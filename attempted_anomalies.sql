@@ -11,7 +11,7 @@ INSERT INTO `Requests` (`RouteName`, `RouteDescription`, `Status`,  `CreatedBy`,
 VALUES ('Lorem ipsum dolor', 'sit amet, consectetur adipiscing', 'PENDING', 1, 9999);
 
 -- Attempt to insert a tuple into Routes table that has Owner set as an EmployeeID that does not exist in Employee table:
-INSERT INTO `Routes` (`Destination`, `Gateway`, ` SubnetMask`, `Owner`, ` Name`, ` Description`)
+INSERT INTO `Routes` (`Destination`, `Gateway`, `SubnetMask`, `Owner`, ` Name`, ` Description`)
 VALUES ('24.68.123.111', '24.68.123.1', '255.255.255.0', 9999, 'Lorem ipsum dolor', 'sit amet, consectetur adipiscing');
 
 -- DELETION ANOMALIES
