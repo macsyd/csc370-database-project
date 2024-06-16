@@ -35,7 +35,7 @@ This sprint we determined all functional depencencies in our database, and from 
 We investigated whether our database was in Boyce-Codd Normal Form (BCNF) by checking whether each functional dependency in our database had a superkey on the left side of the dependency. We found that this was true for all relations in our database, so it is in BCNF without needing any changes. This is explained in [database_bcnf_eval_notes.md](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/database_bcnf_eval_notes.md).
 
 ### Enforce referential integrity
-Based on the functional dependencies and keys we determined, we added foreign key constraints to our database. To test the referential integrity, we ran queries on our database, shown in [attempted_anomalies.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/attempted_anomalies.sql), to introduce anomalies into the database and observed that the constraints on our database prevented this from happening.
+Based on the functional dependencies and keys we determined, we added foreign key constraints to our database ([foreign_keys.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/foreign_keys.sql)). To test the referential integrity, we ran queries on our database, shown in [attempted_anomalies.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/attempted_anomalies.sql), to introduce anomalies into the database and observed that the constraints on our database prevented this from happening. Our foreign key constraints rejected 100% of the attempted anomalies.
 
 ### Use aggregation
 This sprint we have written demo queries using data aggregation by using the WHERE, HAVING, and GROUP BY operators. These queries are shown in [DemoQueries.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/DemoQueries.sql).
@@ -47,7 +47,7 @@ This sprint we have written demo queries using sub-queries, which are shown in [
 ### Plan to meet module-level competencies:
 **Competency:** *“Manages access: Manages data access with users for whom privileges are set and revoked”* <br>
 * Add example users to our database and manage their access by giving them specific privileges.
-* Attempt to run queries that the user does not have privileges for and observe how our database prevents this from happening.
+* Attempt to run queries that the user does not have privileges for and observe how our database prevents this from happening (success criteria is 100% of these queries should fail).
 
 **Competency:** *"Creates views: Creates a view with privileges and inserts or deletes from base table"* <br>
 * Create views within our database.
@@ -56,10 +56,10 @@ This sprint we have written demo queries using sub-queries, which are shown in [
 * Write transactions that batch queries together.
 
 **Competency:** *"Enforces consistency: Enforces consistency with check constraints and assertions"* <br>
-* Enforce consistency on our database and attempt to run queries that violate our schema to observe how well our database handles this.
+* Enforce consistency on our database and attempt to run queries that violate our schema to observe how well our database handles this (success criteria is 100% of these queries should fail).
 
 **Competency:** *"Isolates transactions: Analyses transactions to determine and set appropriate isolation levels"* <br>
-* Write tramsactions and analyze them to determine the isolation levels which are appropriate
+* Write transactions and analyze them to determine the isolation levels which are appropriate
 * Manually set isolation levels in our database
 
 
