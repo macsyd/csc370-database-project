@@ -46,7 +46,7 @@ SELECT * FROM `Requests` WHERE `CreatedBy` = 175;
 -- Get all routes that are owned by employee with ID 615 (was used while troubleshooting and testing)
 SELECT * FROM `Routes` WHERE `Owner` = 615;
 
---Queries with subqueries
+--QUERIES WITH SUBQUERIES
 --get employees that have not created requests and order by EmployeeID
 SELECT *
 FROM Employee e
