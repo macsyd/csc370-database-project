@@ -40,6 +40,12 @@ SELECT COUNT(*) AS NumberOfUnreviewedRequests
 FROM Requests
 WHERE ReviewedBy IS NULL;
 
+-- Get all requests that were reviewed by the admin with ID 175 (was used while troubleshooting and testing)
+SELECT * FROM `Requests` WHERE `CreatedBy` = 175;
+
+-- Get all routes that are owned by employee with ID 615 (was used while troubleshooting and testing)
+SELECT * FROM `Routes` WHERE `Owner` = 615;
+
 --QUERIES WITH SUBQUERIES
 --get employees that have not created requests and order by EmployeeID
 SELECT *
@@ -59,3 +65,14 @@ FROM (
     WHERE ReviewedBy IS NULL
     GROUP BY Status
 ) AS subquery;
+
+-- Get requests that were reviewed by an admin not found in the admin table
+-- This was used while troubleshooting issues with our data and foreign key constraints
+SELECT DISTINCT `ReviewedBy`, `RequestID` 
+FROM `Requests` 
+WHERE `ReviewedBy` IS NOT NULL 
+AND `ReviewedBy` NOT IN 
+(
+	SELECT `AdminID` 
+	FROM `Admin`
+);
