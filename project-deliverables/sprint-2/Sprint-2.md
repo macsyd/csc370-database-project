@@ -29,21 +29,47 @@ Last sprint we created an ERD to visualize the conceptual design of our database
 
 ## Progress on goals this sprint
 ### Determine keys
+This sprint we determined all functional depencencies in our database, and from that determined the superkeys and keys for each relation in our database. This is shown in [keys_superkeys_notes.md](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/keys_superkeys_notes.md).
 
 ### Normalization
+We investigated whether our database was in Boyce-Codd Normal Form (BCNF) by checking whether each functional dependency in our database had a superkey on the left side of the dependency. We found that this was true for all relations in our database, so it is in BCNF without needing any changes. This is explained in [database_bcnf_eval_notes.md](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/database_bcnf_eval_notes.md).
 
 ### Enforce referential integrity
-*maybe we should demo this part with our DB*
+Based on the functional dependencies and keys we determined, we added foreign key constraints to our database. To test the referential integrity, we ran queries on our database, shown in [attempted_anomalies.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/attempted_anomalies.sql), to introduce anomalies into the database and observed that the constraints on our database prevented this from happening.
 
 ### Use aggregation
-*demo queries*
+This sprint we have written demo queries using data aggregation by using the WHERE, HAVING, and GROUP BY operators. These queries are shown in [DemoQueries.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/DemoQueries.sql).
 
 ### Use sub-queries
-*demo queries*
+This sprint we have written demo queries using sub-queries, which are shown in [DemoQueries.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/DemoQueries.sql).
 
 ## Goals for next sprint (up to and including ACID Transactions)
+### Plan to meet module-level competencies:
+**Competency:** *“Manages access: Manages data access with users for whom privileges are set and revoked”* <br>
+* Add example users to our database and manage their access by giving them specific privileges.
+* Attempt to run queries that the user does not have privileges for and observe how our database prevents this from happening.
+
+**Competency:** *"Creates views: Creates a view with privileges and inserts or deletes from base table"* <br>
+* Create views within our database.
+
+**Competency:** *"Ensures atomicity: Ensures atomicity by batching queries into transactions"* <br>
+* Write transactions that batch queries together.
+
+**Competency:** *"Enforces consistency: Enforces consistency with check constraints and assertions"* <br>
+* Enforce consistency on our database and attempt to run queries that violate our schema to observe how well our database handles this.
+
+**Competency:** *"Isolates transactions: Analyses transactions to determine and set appropriate isolation levels"* <br>
+* Write tramsactions and analyze them to determine the isolation levels which are appropriate
+* Manually set isolation levels in our database
+
 
 ## Progress meeting course-level competencies:
 **Data Analytics Competency:** *“Writes SQL code to generate desired effects on a relational database”* <br>
+* This sprint we have demonstrated our ability to anticipate the result of queries executed against relation instances, extracted data using selection predicates and attribute projection, and combined data with the JOIN operator as shown in our demo queries (see [DemoQueries.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/DemoQueries.sql)).
 
-**Data Modeling Competency:** *“Stores data in a set of tables that are compatible with data sources”* <br>
+**Data Analystics Competency:** *"Massages data into visualisation-ready layouts by slicing, dicing, pivoting, and rolling it up it directly in SQL"* <br>
+* This sprint we have demonstrated our ability to express complex logic in a single query using aggregation and sub-queries, shown in our demo queries this sprint (see [DemoQueries.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/DemoQueries.sql)).
+
+**Data Modeling Competency:** *“Constructs well-normalised conceptual and relational schemata that capture requirements without redundancy"* <br>
+* This sprint we demonstrated our ability to identify dependencies among attributes and appropriate keys for relations, as shown in [keys_superkeys_notes.md](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/keys_superkeys_notes.md).
+* We also demonstrated our ability to eliminate data anomalies with effective normalization by normalizing our database, shown in [database_bcnf_eval_notes.md](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/database_bcnf_eval_notes.md), and preventing data anomalies with foreign key constraints, shown in [attempted_anomalies.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-2/attempted_anomalies.sql).

@@ -40,7 +40,7 @@ SELECT COUNT(*) AS NumberOfUnreviewedRequests
 FROM Requests
 WHERE ReviewedBy IS NULL;
 
---Queries with subqueries
+--QUERIES WITH SUBQUERIES
 --get employees that have not created requests and order by EmployeeID
 SELECT *
 FROM Employee e
