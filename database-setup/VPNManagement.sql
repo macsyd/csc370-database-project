@@ -46,10 +46,22 @@ CREATE TABLE Routes (
     FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
 );
 
--- Create database users
+-- Create database users (right now we assume that the number at the end of the username corresponds to the EmployeeID or AdminID)
 CREATE USER 'employee1'@'%' IDENTIFIED BY 'sK244LcP';
 CREATE USER 'employee2'@'%' IDENTIFIED BY 'Rkmeoz4h';
 CREATE USER 'employee3'@'%' IDENTIFIED BY 'cw3txpLt';
 CREATE USER 'admin1'@'%' IDENTIFIED BY 'MbwgpN6z';
 CREATE USER 'admin2'@'%' IDENTIFIED BY 'guxL9FTM';
 CREATE USER 'admin3'@'%' IDENTIFIED BY 'h9RDymfa';
+
+-- Create a view that contains all tuples from the Requests table that were created by the user
+CREATE VIEW `MyRequests` AS
+SELECT * 
+FROM `Requests`
+WHERE `CreatedBY` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
+
+-- Create a view that contains all tuples from the Routes table that are owned by the user
+CREATE VIEW `MyRoutes` AS
+SELECT *
+FROM `Routes`
+WHERE `Owner` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
