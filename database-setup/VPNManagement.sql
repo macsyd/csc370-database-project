@@ -1,4 +1,4 @@
--- Drop existing database if it exists
+-- Drop the existing database if it exists
 DROP DATABASE IF EXISTS VPNManagement;
 
 -- Create a new database
@@ -7,17 +7,19 @@ CREATE DATABASE VPNManagement;
 -- Use the new database
 USE VPNManagement;
 
--- Create Users table
+-- Create the Employee table
 CREATE TABLE Employee (
     EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
     EmployeeName VARCHAR(50) UNIQUE
 );
 
+-- Create the Admin table
 CREATE TABLE Admin (
     AdminID INT AUTO_INCREMENT PRIMARY KEY,
     AdminName VARCHAR(50) UNIQUE
 );
 
+-- Create the Requests table
 CREATE TABLE Requests (
     Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     RequestID INT AUTO_INCREMENT PRIMARY KEY,
@@ -30,7 +32,7 @@ CREATE TABLE Requests (
     FOREIGN KEY (CreatedBy) REFERENCES Employee(EmployeeID)
 );
 
--- Create Routes table
+-- Create the Routes table
 CREATE TABLE Routes (
     RouteID INT AUTO_INCREMENT PRIMARY KEY,
     Destination VARCHAR(100) UNIQUE,
@@ -44,22 +46,10 @@ CREATE TABLE Routes (
     FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
 );
 
--- INSERT INTO Employee (EmployeeName) VALUES
--- ('John Doe');
-
--- Insert data into Admin table
--- INSERT INTO Admin (AdminName) VALUES
--- ('Jane Smith');
-
--- Insert data into Requests table
--- INSERT INTO Requests (RouteName, Status, RouteDescription, ReviewedBy, CreatedBy) VALUES
--- ('Office Network Access', 'APPROVED', 'Access to the office network for all employees.', 1, 1);
-
--- Insert data into Routes table
--- INSERT INTO Routes (Destination, SubnetMask, Gateway, ExpiryDate, Owner, Name, Description) VALUES
--- ('192.168.1.0', '255.255.255.0', '192.168.1.1', '2024-12-31 23:59:59', 1, 'Office Network', 'Access to office network resources');
-
--- SELECT * FROM Routes;
--- SELECT * FROM Requests;
--- SELECT * FROM Admin;
--- SELECT * FROM Employee;
+-- Create database users
+CREATE USER 'employee1'@'%' IDENTIFIED BY 'sK244LcP';
+CREATE USER 'employee2'@'%' IDENTIFIED BY 'Rkmeoz4h';
+CREATE USER 'employee3'@'%' IDENTIFIED BY 'cw3txpLt';
+CREATE USER 'admin1'@'%' IDENTIFIED BY 'MbwgpN6z';
+CREATE USER 'admin2'@'%' IDENTIFIED BY 'guxL9FTM';
+CREATE USER 'admin3'@'%' IDENTIFIED BY 'h9RDymfa';
