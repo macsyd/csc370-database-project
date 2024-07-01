@@ -65,3 +65,7 @@ CREATE VIEW `MyRoutes` AS
 SELECT *
 FROM `Routes`
 WHERE `Owner` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
+
+-- Grant privileges to employees so that they can view their requests and routes
+GRANT SELECT ON `VPNManagement`.`MyRequests`, `VPNManagement`.`MyRoutes`
+TO 'employee1'@'%', 'employee2'@'%', 'employee2'@'%';
