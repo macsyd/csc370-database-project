@@ -17,7 +17,7 @@ USE `VPNManagement`;
 CREATE VIEW `MyRequests` AS
 SELECT * 
 FROM `Requests`
-WHERE `CreatedBY` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
+WHERE `CreatedBy` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
 
 -- Create a view that contains all tuples from the Routes table that are owned by the user
 CREATE VIEW `MyRoutes` AS
