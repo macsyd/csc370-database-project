@@ -68,7 +68,12 @@ WHERE `Owner` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '
 
 -- Grant privileges to employees so that they can view their requests and routes
 GRANT SELECT ON `VPNManagement`.`MyRequests`, `VPNManagement`.`MyRoutes`
-TO 'employee1'@'%', 'employee2'@'%', 'employee2'@'%';
+TO 'employee1'@'%', 'employee2'@'%', 'employee3'@'%';
+
+-- Grant privileges to employees so that they can create requests
+GRANT INSERT ON `VPNManagement`.`Requests`
+TO 'employee1'@'%', 'employee2'@'%', 'employee3'@'%';
+-- Note that the MyRequests view is non-updatable due to the use of the functions in the WHERE clause, so we must grant this privilege on the original table
 
 -- Grant all privileges on all tables to the admins (limited to what the executing user can grant)
 GRANT ALL PRIVILEGES ON `VPNManagement`.*
