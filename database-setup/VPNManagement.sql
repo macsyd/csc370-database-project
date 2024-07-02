@@ -69,3 +69,7 @@ WHERE `Owner` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '
 -- Grant privileges to employees so that they can view their requests and routes
 GRANT SELECT ON `VPNManagement`.`MyRequests`, `VPNManagement`.`MyRoutes`
 TO 'employee1'@'%', 'employee2'@'%', 'employee2'@'%';
+
+-- Grant all privileges on all tables to the admins (limited to what the executing user can grant)
+GRANT ALL PRIVILEGES ON `VPNManagement`.*
+TO 'admin1'@'%', 'admin2'@'%', 'admin3'@'%';
