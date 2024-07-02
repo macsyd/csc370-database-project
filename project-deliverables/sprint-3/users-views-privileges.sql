@@ -25,8 +25,12 @@ SELECT *
 FROM `Routes`
 WHERE `Owner` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
 
--- Grant privileges to employees so that they can view their requests and routes
-GRANT SELECT ON `VPNManagement`.`MyRequests`, `VPNManagement`.`MyRoutes`
+-- Grant privileges to employees so that they can view their requests
+GRANT SELECT ON `VPNManagement`.`MyRequests`
+TO 'employee1'@'%', 'employee2'@'%', 'employee3'@'%';
+
+-- Grant privileges to employees so that they can view their routes
+GRANT SELECT ON `VPNManagement`.`MyRoutes`
 TO 'employee1'@'%', 'employee2'@'%', 'employee3'@'%';
 
 -- Grant privileges to employees so that they can create requests
@@ -53,4 +57,4 @@ TO 'admin1'@'%', 'admin2'@'%', 'admin3'@'%';
 -- exit
 -- mysql -u admin1 -pMbwgpN6z
 -- USE `VPNManagement`;
--- UPDATE `Requests` SET `RouteName` = 'New Name' WHERE `RouteName` = 'My Web Server' AND `CreatedBy` = 1; 
+-- UPDATE `Requests` SET `RouteName` = 'New Name' WHERE `RouteName` = 'My Web Server' AND `CreatedBy` = 1;
