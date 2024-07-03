@@ -24,7 +24,7 @@ CREATE TABLE Requests (
     Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     RequestID INT AUTO_INCREMENT PRIMARY KEY,
     RouteName VARCHAR(100),
-    Status ENUM('APPROVED', 'DENIED', 'PENDING'),
+    Status ENUM('APPROVED', 'DENIED', 'PENDING') DEFAULT 'PENDING',
     RouteDescription TEXT,
     ReviewedBy INT DEFAULT NULL,
     CreatedBy INT,
