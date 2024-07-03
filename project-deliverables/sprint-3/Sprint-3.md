@@ -20,15 +20,18 @@
 
 ## Progress on goals this sprint
 ### Manage access
-This sprint, 
+This sprint, we created new database users and gave them specific access permissions to test permissions in our database. We tested these permissions by attempting to execute queries that these users did not have permissions for and all of these queries failed, so our goal of 100% of queries without proper permissions failing was achieved.
 
 ### Create views
+This sprint we created some views in our database and executed queries on them, as shown in [users-views-privileges.sql]().
 
 ### Ensure atomicity
+This sprint we created transactions, shown in [Transaction.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-3/Transaction.sql), which batch queries together to demonstrate atomicity within our database.
 
 ### Enforce consistency
 
 ### Isolate transactions
+In the transactions we wrote for this sprint, we analyzed the transaction to determine which isolation level was most appropriate for each and then set the isolation levels for each transaction, which is shown in [Transaction.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-3/Transaction.sql).
 
 ## Goals for next sprint (up to and including the first two lessons of Advanced Relational Design)
 ### Plan to meet module-level competencies:
@@ -48,10 +51,10 @@ This sprint,
 * If the set of FD's in our ERD is not a minimal basis, simplify it to be one
 
 **Competency:** *"Preserves FD's: Checks if a decomposition preserves FD's and decomposes into third normal form (3NF) when appropriate"* <br>
-* 
+* As this competency has not been covered in lectures as of this sprint's submission, we will cover this competency in the next sprint
 
 **Competency:** *"Preserves MVD's: Checks if a decomposition preserves multi-value dependencies (MVD's) and decomposes into 4NF when appropriate"* <br>
-* 
+* As this competency has not been covered in lectures as of this sprint's submission, we will cover this competency in the next sprint
 
 ## Progress meeting course-level competencies:
 **Data Analytics Competency:** *“Writes SQL code to generate desired effects on a relational database”* <br>
