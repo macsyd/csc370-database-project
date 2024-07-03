@@ -1,3 +1,5 @@
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
 SELECT * FROM Employee WHERE `EmployeeName` = 'John Doe';
 SELECT * FROM Admin WHERE `AdminName` = 'Jane Smith';
 
@@ -12,6 +14,8 @@ COMMIT;
 SELECT * FROM Employee WHERE `EmployeeName` = 'John Doe';
 SELECT * FROM Admin WHERE `AdminName` = 'John Doe';
 
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
 START TRANSACTION;
 
 INSERT INTO Employee (EmployeeName) VALUES ('John Doe');
@@ -21,6 +25,8 @@ ROLLBACK;
 SELECT * FROM Employee WHERE `EmployeeName` = 'John Doe';
 
 -- ****Conditional Update and Rollback*****
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 
 START TRANSACTION;
 
@@ -44,6 +50,8 @@ SELECT * FROM Requests WHERE `ReviewedBy` = 1;
 COMMIT;
 
 -- **** Same TRANSACTION just with different values ****
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 
 START TRANSACTION;
 
