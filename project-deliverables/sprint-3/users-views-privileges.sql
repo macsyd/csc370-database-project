@@ -40,7 +40,8 @@ TO 'employee1'@'%', 'employee2'@'%', 'employee3'@'%';
 
 -- Grant all privileges on all tables to the admins (limited to what the executing user can grant)
 GRANT ALL PRIVILEGES ON `VPNManagement`.*
-TO 'admin1'@'%', 'admin2'@'%', 'admin3'@'%';
+TO 'admin1'@'%', 'admin2'@'%', 'admin3'@'%'
+WITH GRANT OPTION;
 
 -- Switch users and demonstrate interacting with the views
 -- exit
@@ -57,4 +58,4 @@ TO 'admin1'@'%', 'admin2'@'%', 'admin3'@'%';
 -- exit
 -- mysql -u admin1 -pMbwgpN6z
 -- USE `VPNManagement`;
--- UPDATE `Requests` SET `RouteName` = 'New Name' WHERE `RouteName` = 'My Web Server' AND `CreatedBy` = 1;
+-- UPDATE `Requests` SET `Status` = 'APPROVED', `ReviewedBy` = 1 WHERE `RouteName` = 'My Web Server' AND `CreatedBy` = 1;
