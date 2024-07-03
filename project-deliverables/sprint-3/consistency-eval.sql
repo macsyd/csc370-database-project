@@ -1,7 +1,7 @@
 -- We have already confirmed in Sprint 2 that our foreign key constraints are both complete and correct, so we will not do that again here.
 -- Arguably, all these queries should fail. Therefore, we define the following:
--- PASSED: Query is rejected.
--- FAILED: Query was NOT rejected.
+-- PASSED: Query failed.
+-- FAILED: Query did NOT fail.
 
 -- Violating constraints on uniqueness:
 
