@@ -23,12 +23,13 @@
 This sprint, we created new database users and gave them specific access permissions to test permissions in our database. We tested these permissions by attempting to execute queries that these users did not have permissions for and all of these queries failed, so our goal of 100% of queries without proper permissions failing was achieved.
 
 ### Create views
-This sprint we created some views in our database and executed queries on them, as shown in [users-views-privileges.sql]().
+This sprint we created some views in our database and executed queries on them, as shown in [users-views-privileges.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-3/user-views-privileges.sql).
 
 ### Ensure atomicity
 This sprint we created transactions, shown in [Transaction.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-3/Transaction.sql), which batch queries together to demonstrate atomicity within our database.
 
 ### Enforce consistency
+This sprint we created queries, shown in [consistency-eval.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-3/consistency-eval.sql), that would introduce data inconsistencies to our database. Our goal was for 100% of these queries to fail, but only 50% of them did. This was more consistency violations than we expected to find, so we did not have enough time this sprint to fix these inconsistencies as each group member was busy with midterms.
 
 ### Isolate transactions
 In the transactions we wrote for this sprint, we analyzed the transaction to determine which isolation level was most appropriate for each and then set the isolation levels for each transaction, which is shown in [Transaction.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-3/Transaction.sql).
@@ -56,6 +57,12 @@ In the transactions we wrote for this sprint, we analyzed the transaction to det
 **Competency:** *"Preserves MVD's: Checks if a decomposition preserves multi-value dependencies (MVD's) and decomposes into 4NF when appropriate"* <br>
 * As this competency has not been covered in lectures as of this sprint's submission, we will cover this competency in the next sprint
 
+**Competency:** *"Enforces consistency: Enforces consistency with check constraints and assertions"* <br>
+* Enforce consistency on our database by not allowing the inconsistencies we discovered this sprint to be added to the database. We will measure this using queries that violate our schema which we wrote this sprint (success criteria is 100% of these queries should fail).
+
 ## Progress meeting course-level competencies:
-**Data Analytics Competency:** *“Writes SQL code to generate desired effects on a relational database”* <br>
-* 
+**Back-End Engineering Competency:** *“Creates conditions to ensure relational databases exhibit ACID behaviour”* <br>
+* This sprint we showcased this competency by writing transactions and understanding consistency.
+
+**Back-End Engineering Competency:** *“Implements effective controls to ensure that a database can be used in a concurrent, multi-user environment”* <br>
+* This sprint we demonstrated this competency by creating database users and giving them privileges, creating views to regulate data access by these users, and selecting isolation levels for trasactions.
