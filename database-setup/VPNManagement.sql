@@ -46,7 +46,15 @@ CREATE TABLE Routes (
     FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
 );
 
--- Create database users (right now we assume that the number at the end of the username corresponds to the EmployeeID or AdminID)
+-- Drop the existing users if they exist
+DROP USER IF EXISTS 'employee1'@'%';
+DROP USER IF EXISTS 'employee2'@'%';
+DROP USER IF EXISTS 'employee3'@'%';
+DROP USER IF EXISTS 'admin1'@'%';
+DROP USER IF EXISTS 'admin2'@'%';
+DROP USER IF EXISTS 'admin3'@'%';
+
+-- Create users (right now we assume that the number at the end of the username corresponds to the EmployeeID or AdminID)
 CREATE USER 'employee1'@'%' IDENTIFIED BY 'sK244LcP';
 CREATE USER 'employee2'@'%' IDENTIFIED BY 'Rkmeoz4h';
 CREATE USER 'employee3'@'%' IDENTIFIED BY 'cw3txpLt';
