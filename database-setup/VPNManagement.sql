@@ -10,24 +10,24 @@ USE VPNManagement;
 -- Create the Employee table
 CREATE TABLE Employee (
     EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
-    EmployeeName VARCHAR(50) UNIQUE
+    EmployeeName VARCHAR(50) UNIQUE NOT NULL
 );
 
 -- Create the Admin table
 CREATE TABLE Admin (
     AdminID INT AUTO_INCREMENT PRIMARY KEY,
-    AdminName VARCHAR(50) UNIQUE
+    AdminName VARCHAR(50) UNIQUE NOT NULL
 );
 
 -- Create the Requests table
 CREATE TABLE Requests (
     Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     RequestID INT AUTO_INCREMENT PRIMARY KEY,
-    RouteName VARCHAR(100),
+    RouteName VARCHAR(100) NOT NULL,
     Status ENUM('APPROVED', 'DENIED', 'PENDING') DEFAULT 'PENDING',
-    RouteDescription TEXT,
-    ReviewedBy INT DEFAULT NULL,
-    CreatedBy INT,
+    RouteDescription TEXT NOT NULL,
+    ReviewedBy INT,
+    CreatedBy INT NOT NULL,
     FOREIGN KEY (ReviewedBy) REFERENCES Admin(AdminID),
     FOREIGN KEY (CreatedBy) REFERENCES Employee(EmployeeID)
 );
@@ -35,12 +35,12 @@ CREATE TABLE Requests (
 -- Create the Routes table
 CREATE TABLE Routes (
     RouteID INT AUTO_INCREMENT PRIMARY KEY,
-    Destination VARCHAR(100) UNIQUE,
-    SubnetMask VARCHAR(100),
-    Gateway VARCHAR(100),
+    Destination VARCHAR(100) UNIQUE NOT NULL,
+    SubnetMask VARCHAR(100) NOT NULL,
+    Gateway VARCHAR(100) NOT NULL,
     CreationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ExpiryDate TIMESTAMP DEFAULT NULL,
-    Owner INT,
+    ExpiryDate TIMESTAMP,
+    Owner INT NOT NULL,
     Name VARCHAR(100),
     Description TEXT,
     FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
