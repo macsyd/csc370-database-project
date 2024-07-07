@@ -58,7 +58,7 @@ CREATE USER 'admin3'@'%' IDENTIFIED BY 'h9RDymfa';
 CREATE VIEW `MyRequests` AS
 SELECT * 
 FROM `Requests`
-WHERE `CreatedBY` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
+WHERE `CreatedBy` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
 
 -- Create a view that contains all tuples from the Routes table that are owned by the user
 CREATE VIEW `MyRoutes` AS
@@ -66,8 +66,12 @@ SELECT *
 FROM `Routes`
 WHERE `Owner` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
 
--- Grant privileges to employees so that they can view their requests and routes
-GRANT SELECT ON `VPNManagement`.`MyRequests`, `VPNManagement`.`MyRoutes`
+-- Grant privileges to employees so that they can view their requests
+GRANT SELECT ON `VPNManagement`.`MyRequests`
+TO 'employee1'@'%', 'employee2'@'%', 'employee3'@'%';
+
+-- Grant privileges to employees so that they can view their routes
+GRANT SELECT ON `VPNManagement`.`MyRoutes`
 TO 'employee1'@'%', 'employee2'@'%', 'employee3'@'%';
 
 -- Grant privileges to employees so that they can create requests
