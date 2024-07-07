@@ -64,7 +64,7 @@ CREATE USER 'admin3'@'%' IDENTIFIED BY 'h9RDymfa';
 
 -- Create a view that contains all tuples from the Requests table that were created by the user
 CREATE VIEW `MyRequests` AS
-SELECT * 
+SELECT *
 FROM `Requests`
 WHERE `CreatedBy` = CAST(REGEXP_REPLACE(SUBSTRING_INDEX(USER(), '@', 1), '[^0-9]', '') AS UNSIGNED);
 
