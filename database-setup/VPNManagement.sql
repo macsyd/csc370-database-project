@@ -44,6 +44,7 @@ CREATE TABLE Routes (
     Name VARCHAR(100),
     Description TEXT,
     FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
+    CHECK (`CreationDate` < `ExpiryDate`)
 );
 
 -- Drop the existing users if they exist
