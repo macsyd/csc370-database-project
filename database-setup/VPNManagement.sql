@@ -43,7 +43,7 @@ CREATE TABLE Routes (
     Owner INT NOT NULL,
     Name VARCHAR(100),
     Description TEXT,
-    FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID)
+    FOREIGN KEY (Owner) REFERENCES Employee(EmployeeID),
     CHECK (`CreationDate` < `ExpiryDate`)
 );
 
