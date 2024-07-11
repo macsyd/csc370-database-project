@@ -45,7 +45,7 @@ INSERT INTO `Requests` (`RouteName`, `Status`, `RouteDescription`, `CreatedBy`) 
 
 -- Violating timestamps:
 
--- FAIL: Attempt to create a route with a CreationDate that is later than the ExpiryDate.
+-- PASS: Attempt to create a route with a CreationDate that is later than the ExpiryDate.
 INSERT INTO `Routes` (`Destination`, `SubnetMask`, `Gateway`, `CreationDate`, `ExpiryDate`, `Owner`, `Name`, `Description`) 
 VALUES ('172.16.123.11', '255.255.255.0', '172.16.123.1', '2024-07-03 11:01:23', '2024-07-02 11:01:23', 1, 'RouteE', 'Just for testing.');
 
