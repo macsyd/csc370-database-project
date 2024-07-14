@@ -8,22 +8,20 @@ CREATE DATABASE VPNManagement;
 USE VPNManagement;
 
 -- Create Users table
-CREATE TABLE Employee (
-    UserID INT PRIMARY KEY,
-    EmployeeName VARCHAR(50) UNIQUE,
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+CREATE TABLE User (
+    UserID INT AUTO_INCREMENT PRIMARY KEY
 );
 
--- Create the Employee table
 CREATE TABLE Employee (
-    EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
-    EmployeeName VARCHAR(50) UNIQUE
+    UserID INT PRIMARY KEY,
+    Name VARCHAR(50) UNIQUE,
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
 
 -- Create the Admin table
 CREATE TABLE Admin (
     UserID INT PRIMARY KEY,
-    AdminName VARCHAR(50) UNIQUE,
+    Name VARCHAR(50) UNIQUE,
     FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
 
