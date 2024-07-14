@@ -1,4 +1,6 @@
 # Evaluation of ERD Quality
+Overall, our ERD was found to be of good quality and did not need any immediate changes besides adding inheritance (this evaluation was conducted on our most up-to-date version of the ERD, including the inheritance changes this sprint).
+
 ## Completeness
 Based on the requirements we identified in our project kick-off sprint ([Project Kick-Off.md](project-deliverables/project-kick-off/Project Kick-Off.md)), our ERD covers all requirements of our application.
 
