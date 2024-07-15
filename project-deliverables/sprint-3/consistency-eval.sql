@@ -21,19 +21,19 @@ INSERT INTO `Routes` (`Destination`, `SubnetMask`, `Gateway`, `Owner`, `Name`, `
 
 -- Violations of consistency due to lack of constraints:
 
--- FAIL: Attempt to create a request without specifying a value for CreatedBy. If this is possible, then it means we allow requests to seemingly just appear out of thin air. What if the admin reviewing the request needs more information to understand what the user wants? They have no way of knowing who to contact.
+-- PASS: Attempt to create a request without specifying a value for CreatedBy. If this is possible, then it means we allow requests to seemingly just appear out of thin air. What if the admin reviewing the request needs more information to understand what the user wants? They have no way of knowing who to contact.
 INSERT INTO `Requests` (`RouteName`, `RouteDescription`) VALUES ('RouteC', 'Just for testing.');
 
--- FAIL: Attempt to create a request without specifying a value for RouteName and RouteDescription. If this is possible, then it means we allow blank requests. That would not make much sense.
+-- PASS: Attempt to create a request without specifying a value for RouteName and RouteDescription. If this is possible, then it means we allow blank requests. That would not make much sense.
 INSERT INTO `Requests` (`CreatedBy`) VALUES (1);
 
--- FAIL: Attempt to create a route without specifying a Destination, SubnetMask, Gateway, or Owner. If any VPN system should be able to work alongside this database, then it is guaranteed to at least require a destination. Would the VPN crash if an entry exists that is missing information? Better to just be safe.
+-- PASS: Attempt to create a route without specifying a Destination, SubnetMask, Gateway, or Owner. If any VPN system should be able to work alongside this database, then it is guaranteed to at least require a destination. Would the VPN crash if an entry exists that is missing information? Better to just be safe.
 INSERT INTO `Routes` (`Name`, `Description`) VALUES ('Another Route', 'Who knows...');
 
--- FAIL: Attempt to insert a tuple into the Employee table without specify an EmployeeName.
+-- PASS: Attempt to insert a tuple into the Employee table without specify an EmployeeName.
 INSERT INTO `Employee` VALUES ();
 
--- FAIL: Attempt to insert a tuple into the Admin table without specify an AdminName.
+-- PASS: Attempt to insert a tuple into the Admin table without specify an AdminName.
 INSERT INTO `Admin` VALUES ();
 
 
@@ -45,7 +45,7 @@ INSERT INTO `Requests` (`RouteName`, `Status`, `RouteDescription`, `CreatedBy`) 
 
 -- Violating timestamps:
 
--- FAIL: Attempt to create a route with a CreationDate that is later than the ExpiryDate.
+-- PASS: Attempt to create a route with a CreationDate that is later than the ExpiryDate.
 INSERT INTO `Routes` (`Destination`, `SubnetMask`, `Gateway`, `CreationDate`, `ExpiryDate`, `Owner`, `Name`, `Description`) 
 VALUES ('172.16.123.11', '255.255.255.0', '172.16.123.1', '2024-07-03 11:01:23', '2024-07-02 11:01:23', 1, 'RouteE', 'Just for testing.');
 
