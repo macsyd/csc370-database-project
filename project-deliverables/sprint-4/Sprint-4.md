@@ -20,13 +20,16 @@
 
 ## Progress on goals
 ### Enforcing consistency
+This sprint we finished enforcing consistency on our database by adding check constraints to some attributes. Now 100% of the queries we identified last sprint which should fail as they violate the consistency of our database do fail, so this goal has been achieved.
 
 ### Inheritance and weak entity sets
+We added inheritance to our ERD this sprint as we thought this was a better representation of our entities and relations. We determined that weak entity sets were not required in our ERD and would not add value to our conceptual design.
 
 ### Evaluate ERD
 We evaluated the quality of our ERD according to the aspects we discussed in lectures and reported our findings in [eval-erd.md](project-deliverables/sprint-4/eval-erd.md). We found that our ERD was of fairly good quality and did not need any additional changes to improve the quality.
 
 ### Identify functional dependencies and calculate minimal basis
+We identified all functional dependencies in our ERD and reported them in [functional-dependencies.md](project-deliverables/sprint-4/functional-dependencies.md). We then used this list of functional dependencies to calculate the closure of each attribute in our ERD and from there calculate a minimal basis for our ERD.
 
 ## Goals for next sprint (up to and including Interfacing with an RDBMS)
 ### Plan to meet module level-competencies
@@ -48,3 +51,11 @@ We evaluated the quality of our ERD according to the aspects we discussed in lec
 * Write queries using NULL values and use ternary predicate logic to predict results
 
 ## Progress on course-level competencies
+**Data Modelling Competency:** *"Constructs well-normalised conceptual and relational schemata that capture requirements without redundancy"* <br>
+* This sprint we demonstrated progress on the data modelling competency by identifying dependencies among attributes for entity sets and relations and justifying the quality of a schema through a theoretical lens. We also mapped requirements onto schemata and vice versa to ensure our design was minimal and complete.
+
+**Data Modelling Competency:** *"Applies advanced ERD constructs and normalisation methods to produce more natural schemata"* <br>
+* This sprint we demonstrated progress on this data modelling competency by using inheritance and weak entity sets when they are more expressive than alternatives.
+
+**Back-end Engineering Competency:** *"Creates conditions to ensure relational databases exhibit ACID behaviour"* <br>
+* We demonstrated progress on this competency by showing we understand the consistency principle and ensuring our database never enters an inconsistent state by adding check constraints to enforece consistency.
