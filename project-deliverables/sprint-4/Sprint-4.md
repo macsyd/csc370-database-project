@@ -29,7 +29,7 @@ We added inheritance to our ERD this sprint as we thought this was a better repr
 We evaluated the quality of our ERD according to the aspects we discussed in lectures and reported our findings in [eval-erd.md](project-deliverables/sprint-4/eval-erd.md). We found that our ERD was of fairly good quality and did not need any additional changes to improve the quality.
 
 ### Identify functional dependencies and calculate minimal basis
-We identified all functional dependencies in our ERD and reported them in [functional-dependencies.md](project-deliverables/sprint-4/functional-dependencies.md). We then used this list of functional dependencies to calculate the closure of each attribute in our ERD and from there calculate a minimal basis for our ERD.
+We identified all functional dependencies in our ERD and reported them in [functional-dependencies.md](project-deliverables/sprint-4/functional-dependencies.md). We then used this list of functional dependencies to determine a minimal basis for our ERD.
 
 ## Goals for next sprint (up to and including Interfacing with an RDBMS)
 ### Plan to meet module level-competencies
@@ -42,7 +42,7 @@ We identified all functional dependencies in our ERD and reported them in [funct
 * Decompose our database into 4NF if appropriate
 
 **Competency:** *"Simplifies queries: Simplifies a complex query by converting a sub-query into a (outer?) join"* <br>
-* If possible, simplify our earlier queries (in [DemoQueries.sql](project-deliverables/sprint-2/DemoQueries.sql))that used sub-queries by potentially converting them into a join
+* If possible, simplify our earlier queries (in [DemoQueries.sql](project-deliverables/sprint-2/DemoQueries.sql)) that used sub-queries by potentially converting them into a join
 
 **Competency:** *"Uses triggers: Enforces consistency by adding triggers to queries"* <br>
 * Write queries that use triggers to enforce consistency
