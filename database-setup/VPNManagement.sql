@@ -7,23 +7,23 @@ CREATE DATABASE VPNManagement;
 -- Use the new database
 USE VPNManagement;
 
--- Create the User table
-CREATE TABLE User (
+-- Create the Users table
+CREATE TABLE Users (
     UserID INT AUTO_INCREMENT PRIMARY KEY
 );
 
--- Create the Employee table
-CREATE TABLE Employee (
+-- Create the Employees table
+CREATE TABLE Employees (
     UserID INT PRIMARY KEY,
     `Name` VARCHAR(50) NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
--- Create the Admin table
-CREATE TABLE `Admin` (
+-- Create the Admins table
+CREATE TABLE Admins (
     UserID INT PRIMARY KEY,
     `Name` VARCHAR(50) NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 -- Create the Requests table
@@ -35,8 +35,8 @@ CREATE TABLE Requests (
     Status ENUM('APPROVED', 'REJECTED', 'PENDING') DEFAULT 'PENDING',
     CreatedBy INT NOT NULL,
     ReviewedBy INT,
-    FOREIGN KEY (ReviewedBy) REFERENCES `Admin`( UserID),
-    FOREIGN KEY (CreatedBy) REFERENCES Employee(UserID)
+    FOREIGN KEY (ReviewedBy) REFERENCES Admins(UserID),
+    FOREIGN KEY (CreatedBy) REFERENCES Employees(UserID)
 );
 
 -- Create the Routes table
@@ -49,6 +49,6 @@ CREATE TABLE Routes (
     Owner INT NOT NULL,
     `Name` VARCHAR(100),
     Description TEXT,
-    FOREIGN KEY (Owner) REFERENCES Employee(UserID),
+    FOREIGN KEY (Owner) REFERENCES Employees(UserID),
     CHECK (CreationDate < ExpiryDate)
 );
