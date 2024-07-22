@@ -1,30 +1,35 @@
 -- Insert user data
-LOAD DATA LOCAL INFILE '/path/to/User.csv'
-INTO TABLE `User`
+LOAD DATA LOCAL INFILE '/path/to/Users.csv'
+INTO TABLE Users
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
 -- Insert employee data
-LOAD DATA INFILE 'file path'
-INTO TABLE Employee
+LOAD DATA LOCAL INFILE '/path/to/Employees.csv'
+INTO TABLE Employees
 FIELDS TERMINATED BY ','
-IGNORE 1 ROWS;
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
 
 -- Insert admin data
-LOAD DATA INFILE 'file path'
-INTO TABLE Admin
+LOAD DATA LOCAL INFILE '/path/to/Admins.csv'
+INTO TABLE Admins
 FIELDS TERMINATED BY ','
-IGNORE 1 ROWS;
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
 
 -- Insert request data
-LOAD DATA INFILE 'file path'
+LOAD DATA LOCAL INFILE '/path/to/Requests.csv'
 INTO TABLE Requests
 FIELDS TERMINATED BY ','
-IGNORE 1 ROWS;
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+SET ReviewedBy = NULLIF(ReviewedBy, '');
 
 -- Insert route data
-LOAD DATA INFILE 'file path'
+LOAD DATA LOCAL INFILE '/path/to/Routes.csv'
 INTO TABLE Routes
 FIELDS TERMINATED BY ','
-IGNORE 1 ROWS;
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
