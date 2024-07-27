@@ -14,7 +14,7 @@ FROM `Employees`
 LEFT OUTER JOIN `Requests`
   ON (`Employees`.`UserID` = `Requests`.`CreatedBy`)
 WHERE `Requests`.`CreatedBy` IS NULL
-ORDER BY UserID;
+ORDER BY `UserID`;
 -- Note: We have a NOT NULL constraint on `Requests`.`CreatedBy` in our schema, so it cannot already be NULL and we are safe in that this change will not cause spurious results.
 
 
