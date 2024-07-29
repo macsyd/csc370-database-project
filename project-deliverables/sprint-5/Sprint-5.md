@@ -25,8 +25,10 @@ We checked all functional dependencies in our database and found the relations i
 As we have no multi-valued dependencies in our database, we found that our database was already in 4NF and did not require any further decompositions. This is described in [4nf-decomposition.md](project-deliverables/sprint-5/4nf-decomposition.md).
 
 ### Simplifying queries
+We were able to simplify all three of our subqueries that we wrote back in Sprint 2 by using left outer joins and removing a redundant projection. A new file, [SimplifiedSubqueries.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-5/SimplifiedSubqueries.sql), includes the updated queries as well as the old versions for reference.
 
 ### Using triggers
+We enhanced our database schema by implementing triggers to ensure that no tuple in the Employees table shares the same UserID as a tuple in the Admins table, and vice versa. You can find the triggers in [Triggers.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-5/Triggers.sql), and our finalized database schema is available in [VPNManagement.sql](https://github.com/macsyd/csc370-database-project/blob/main/database-setup/VPNManagement.sql).
 
 ### Queries with NULL values
 One Focus this sprint was incorporating NULL values into our database to understand and utilize ternary predicate logic. We created and executed some queries that specifically addressed NULL values, and tested how our database handles conditions that result in TRUE, FALSE, or UNKNOWN due to the NULLs values.
