@@ -19,8 +19,10 @@
 
 ## Progress on goals
 ### 3NF
+We checked all functional dependencies in our database and found the relations in our database were already in 3NF. This is described in [3nf-decomposition.md](project-deliverables/sprint-5/3nf-decomposition.md).
 
 ### 4NF
+As we have no multi-valued dependencies in our database, we found that our database was already in 4NF and did not require any further decompositions. This is described in [4nf-decomposition.md](project-deliverables/sprint-5/4nf-decomposition.md).
 
 ### Simplifying queries
 
