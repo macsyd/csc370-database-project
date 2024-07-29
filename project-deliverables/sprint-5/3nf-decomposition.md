@@ -5,7 +5,7 @@ Below we list all the prime attributes for each relation currently in our databa
 Key(s): UserID <br>
 Prime attributes: UserID
 
-**Employees (*EmployeeID*, Name)** <br>
+**Employees (*UserID*, Name)** <br>
 Key(s): UserID <br>
 Prime attributes: UserID
 
