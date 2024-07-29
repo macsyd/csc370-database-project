@@ -44,7 +44,7 @@ Left side of FD is a superkey, so it is in 3NF.
 FDs: Destination &rarr; Gateway, SubnetMask, CreationDate, ExpiryDate, Name, Description, Owner <br>
 Left side of FD is a superkey, so it is in 3NF.
 
-Since all FDs in every relation in our current database are in 3NF, this means our database is in 3NF.
+Since all FDs in every relation in our current database are in 3NF, this means our database is in 3NF. This makes sense as we previously established that our database in in BCNF, which implies it is in 3NF.
 
 ## Preservation of FDs
 However, there are two FDs which are present in our ERD but are not preserved in these relations: <br>
