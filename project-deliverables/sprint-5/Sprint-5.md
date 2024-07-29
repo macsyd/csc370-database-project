@@ -29,14 +29,22 @@ As we have no multi-valued dependencies in our database, we found that our datab
 ### Using triggers
 
 ### Queries with NULL values
+One Focus this sprint was incorporating NULL values into our database to understand and utilize ternary predicate logic. We created and executed some queries that specifically addressed NULL values, and tested how our database handles conditions that result in TRUE, FALSE, or UNKNOWN due to the NULLs values.
 
 ## Future Work
 ### Improvement to meet module level-competencies
 **Competency:** *"Preserves FD's: Checks if a decomposition preserves FD's and decomposes into third normal form (3NF) when appropriate"* <br>
 * Further exploration into whether all our FDs are preserved correctly and determine the best way to preserve the initiates relationship between Requests and Routes.
 
+**Competency:** *"Utilizes indexing to optimize query performance"* <br>
+* Future work will involve identifying critical queries that would benefit from indexing and implementing appropriate indexes to optimize performance. We will measure query execution times before and after indexing to ensure significant improvements.
+
 ## Progress on course-level competencies
-**Data Modelling Competency:** *""* <br>
+**Back-end Engineering Competency:** *"Simplifies complex queries for optimized performance"* <br>
+* This sprint we focused on simplifying complex queries to improve the performance and readability of our database operations.
+
+**Back-end Engineering Competency** *"Utilizes triggers to automate database operations and enforce business rules"* <br>
+* This sprint we advanced this competency by implementing triggers to automate various database operations and enforce business rules.
 
 **Data Modelling Competency:** *""* <br>
 
