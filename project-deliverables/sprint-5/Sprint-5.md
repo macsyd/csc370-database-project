@@ -50,8 +50,8 @@ We created and executed some queries that specifically addressed NULL values, wh
 * As part of the Advanced SQL module, we would analyze our database and create appropriate unit tests focused on the functionality of the database to ensure all constraints are satisfied
 
 ## Progress on course-level competencies
-**Data Analytics Competency:** *"Avoids sub-queries when possible."* <br>
+**Data Analytics Competency:** *"Avoids sub-queries when possible"* <br>
 * While assessing our previously-written subqueries, we determined that such subqueries could be avoided (explained above)
 
-**Back-end Engineering Competency** *"Utilizes triggers to automate database operations and enforce business rules"* <br>
+**Back-end Engineering Competency:** *"Utilizes triggers to automate database operations and enforce business rules"* <br>
 * We also advanced this competency by implementing triggers to automate various database operations and enforce business rules
