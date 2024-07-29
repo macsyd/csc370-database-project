@@ -1,7 +1,7 @@
 # Sprint 5
 ## Goals for this sprint
 **Competency:** *"Preserves FD's: Checks if a decomposition preserves FD's and decomposes into third normal form (3NF) when appropriate"* <br>
-* Check if all the functional dependencies in our ERD are preserved in our database which is in BCNF
+* Check if all the functional dependencies in our ERD are preserved in our database, which is already in BCNF
 * Decompose our database into 3NF if appropriate
 
 **Competency:** *"Preserves MVD's: Checks if a decomposition preserves multi-value dependencies (MVD's) and decomposes into 4NF when appropriate"* <br>
@@ -9,7 +9,7 @@
 * Decompose our database into 4NF if appropriate
 
 **Competency:** *"Simplifies queries: Simplifies a complex query by converting a sub-query into a (outer?) join"* <br>
-* If possible, simplify our earlier queries (in [DemoQueries.sql](project-deliverables/sprint-2/DemoQueries.sql)) that used sub-queries by potentially converting them into a join
+* If possible, simplify our earlier subqueries (in [DemoQueries.sql](project-deliverables/sprint-2/DemoQueries.sql)) by potentially converting them into a join
 
 **Competency:** *"Uses triggers: Enforces consistency by adding triggers to queries"* <br>
 * Write queries that use triggers to enforce consistency
@@ -31,22 +31,24 @@ We were able to simplify all three of our subqueries that we wrote back in Sprin
 We enhanced our database schema by implementing triggers to ensure that no tuple in the Employees table shares the same UserID as a tuple in the Admins table, and vice versa. You can find the triggers in [Triggers.sql](https://github.com/macsyd/csc370-database-project/blob/main/project-deliverables/sprint-5/Triggers.sql), and our finalized database schema is available in [VPNManagement.sql](https://github.com/macsyd/csc370-database-project/blob/main/database-setup/VPNManagement.sql).
 
 ### Queries with NULL values
-One Focus this sprint was incorporating NULL values into our database to understand and utilize ternary predicate logic. We created and executed some queries that specifically addressed NULL values, and tested how our database handles conditions that result in TRUE, FALSE, or UNKNOWN due to the NULLs values.
+We created and executed some queries that specifically addressed NULL values, while testing how our database handles conditions that result in TRUE, FALSE, or UNKNOWN due to the NULL values.
 
-## Future Work
-### Improvement to meet module level-competencies
+## Future work
+### Improvements towards meeting module level-competencies
 **Competency:** *"Preserves FD's: Checks if a decomposition preserves FD's and decomposes into third normal form (3NF) when appropriate"* <br>
-* Further exploration into whether all our FDs are preserved correctly and determine the best way to preserve the initiates relationship between Requests and Routes.
+* Further exploration into whether all our FDs are preserved correctly and determine the best way to preserve the initiates relationship between Requests and Routes
 
 **Competency:** *"Utilizes indexing to optimize query performance"* <br>
-* Future work will involve identifying critical queries that would benefit from indexing and implementing appropriate indexes to optimize performance. We will measure query execution times before and after indexing to ensure significant improvements.
+* Identify common queries that would benefit from indexing and implementing appropriate indexes to optimize performance
+* Involves measuring query execution times before and after indexing to ensure that the indexing is worthwhile
 
 **Competency:** *"Applies the external memory model: Analyses look up and range query I/O's in a B+-tree using the I/O model; Converts SQL to plans: Enumerates equivalent logical query plans from a SQL query; Optimises physical queries: Analyse the physical plan efficacy of pushing selections through joins"*<br>
-* Analyze existing queries for efficiency using the external memory model and optimize them.
-* Create common queries that might be run on this database (such as in an application that would use this database) and create query plans for each to optimize them.
+* Analyze existing queries for efficiency using the external memory model and optimize them
+* Create common queries that might be run on this database (such as in an application that would use this database) and create optimized query plans for each
 
+### Another improvement
 **Competency:** *No specific competency, but part of the Advanced SQL Module* <br>
-* Analyze database and create appropriate unit tests to test the functionality of the database and ensure all constraints continue to be satisfied even if there are future changes to the database.
+* As part of the Advanced SQL module, we would analyze our database and create appropriate unit tests focused on the functionality of the database to ensure all constraints are satisfied
 
 ## Progress on course-level competencies
 **Back-end Engineering Competency:** *"Simplifies complex queries for optimized performance"* <br>
