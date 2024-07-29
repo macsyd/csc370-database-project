@@ -47,7 +47,6 @@ We created and executed some queries that specifically addressed NULL values, wh
 * Create common queries that might be run on this database (such as in an application that would use this database) and create optimized query plans for each
 
 ### Another improvement
-**Competency:** *No specific competency, but part of the Advanced SQL Module* <br>
 * As part of the Advanced SQL module, we would analyze our database and create appropriate unit tests focused on the functionality of the database to ensure all constraints are satisfied
 
 ## Progress on course-level competencies
