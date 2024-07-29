@@ -25,12 +25,12 @@ Prime attributes: Destination
 Below we determine if our relations are in 3NF.
 
 **Users (*UserID*)** <br>
-FDs: None
+FDs: None <br>
 No FDs, so this relation is in 3NF.
 
-**Employees (*EmployeeID*, Name)** <br>
-FDs: EmployeeID &rarr; Name <br>
-Left side of this FD is a super key, so it is in 3NF.
+**Employees (*UserID*, Name)** <br>
+FDs: UserID &rarr; Name <br>
+Left side of this FD is a superkey, so it is in 3NF.
 
 **Admins (*UserID*, Name)** <br>
 FDs: UserID &rarr; Name <br>
