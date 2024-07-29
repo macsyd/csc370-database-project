@@ -48,8 +48,10 @@ Since all FDs in every relation in our current database are in 3NF, this means o
 
 ## Preservation of FDs
 However, there are two FDs which are present in our ERD but are not preserved in these relations: <br>
-RequestID &rarr; Destination <br>
-Destination &rarr; RequestID <br>
+
+1. RequestID &rarr; Destination <br>
+2. Destination &rarr; RequestID <br>
+
 These FDs come from the one-to-one initiates relationship from our ERD. We could preserve the second FD by including a RequestID attribute in the Routes relation, which would make sense semantically. 
 We could preserve the first FD by including a Destination attribute in the Requests relation, which would not make sense as the Destination should not be known yet when a request tuple is created (in the scenario of our database, where an employee would create this request without needing to know the technical details of the route that will be initiated). 
 We also cannot implement this relationship by corresponding request and route tuples having the same primary key, as one relation uses an integer as a primary key and one uses a desination IP address. 
