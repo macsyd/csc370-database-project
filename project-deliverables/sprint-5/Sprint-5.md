@@ -39,6 +39,13 @@ One Focus this sprint was incorporating NULL values into our database to underst
 **Competency:** *"Utilizes indexing to optimize query performance"* <br>
 * Future work will involve identifying critical queries that would benefit from indexing and implementing appropriate indexes to optimize performance. We will measure query execution times before and after indexing to ensure significant improvements.
 
+**Competency:** *"Applies the external memory model: Analyses look up and range query I/O's in a B+-tree using the I/O model; Converts SQL to plans: Enumerates equivalent logical query plans from a SQL query; Optimises physical queries: Analyse the physical plan efficacy of pushing selections through joins"*<br>
+* Analyze existing queries for efficiency using the external memory model and optimize them.
+* Create common queries that might be run on this database (such as in an application that would use this database) and create query plans for each to optimize them.
+
+**Competency:** *No specific competency, but part of the Advanced SQL Module* <br>
+* Analyze database and create appropriate unit tests to test the functionality of the database and ensure all constraints continue to be satisfied even if there are future changes to the database.
+
 ## Progress on course-level competencies
 **Back-end Engineering Competency:** *"Simplifies complex queries for optimized performance"* <br>
 * This sprint we focused on simplifying complex queries to improve the performance and readability of our database operations.
@@ -47,5 +54,3 @@ One Focus this sprint was incorporating NULL values into our database to underst
 * This sprint we advanced this competency by implementing triggers to automate various database operations and enforce business rules.
 
 **Data Modelling Competency:** *""* <br>
-
-**Back-end Engineering Competency:** *""* <br>
